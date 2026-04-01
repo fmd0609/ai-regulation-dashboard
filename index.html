@@ -697,7 +697,7 @@ const dcAreas = [
   { area: "Grid impact", state: "Power grid reliability protections", fed: "Voluntary Ratepayer Pledge", t: "high" },
   { area: "Foreign ownership", state: "Security & ownership restrictions", fed: "National security alignment", t: "low" },
 ];
-const tColors = { high: { bg: "#5c4a6e", text: "#fff" }, medium: { bg: "#8e78a0", text: "#3d3450" }, low: { bg: "#e2dce8", text: "#3d3450" } };
+const tColors = { high: { bg: "#5c4a6e", text: "#fff" }, medium: { bg: "#8e78a0", text: "#fff" }, low: { bg: "#e2dce8", text: "#3d3450" } };
 let dcTableHtml = '';
 dcAreas.forEach(r => {
   dcTableHtml += `<tr><td style="font-weight:500;color:#3d3450">${r.area}</td><td>${r.state}</td><td>${r.fed}</td><td style="text-align:center"><span class="badge" style="background:${tColors[r.t].bg};color:${tColors[r.t].text}">${r.t}</span></td></tr>`;
@@ -707,7 +707,7 @@ document.getElementById('dc-table').innerHTML = dcTableHtml;
 // DC volume bars
 const dcData = [
   { label: "State Data Center Bills (2025)", value: 200, color: "#5c4a6e" },
-  { label: "State Data Center Laws Enacted", value: 40, color: "#8e78a0" },
+  { label: "State Data Center Laws Enacted", value: 40, color: "#5c4a6e" },
   { label: "Federal Executive Orders", value: 2, color: "#3d3450" },
   { label: "Federal Data Center Bills", value: 1, color: "#3d3450" },
 ];
@@ -730,7 +730,7 @@ const tensions = [
 ];
 const riskStyles = {
   high: { border: "#8e78a0", bg: "#ebe5f0", numBg: "#5c4a6e", badgeBg: "#5c4a6e", badgeText: "#fff" },
-  medium: { border: "#e2dce8", bg: "#ece8f0", numBg: "#8e78a0", badgeBg: "#8e78a0", badgeText: "#3d3450" },
+  medium: { border: "#e2dce8", bg: "#ece8f0", numBg: "#8e78a0", badgeBg: "#8e78a0", badgeText: "#ffffff" },
 };
 let tensionHtml = '';
 tensions.forEach(t => {
