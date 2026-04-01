@@ -150,8 +150,8 @@
   <div class="header">
     <h1>U.S. AI Regulation Dashboard</h1>
     <div class="header-meta">
-      <span class="header-date">Last updated: April 1, 2026</span>
-      <span class="header-badge">Auto-refreshes weekday mornings</span>
+      <span class="header-date">Last updated: April 1, 2026 (ET)</span>
+      <span class="header-badge">Updates each weekday morning</span>
       <span class="header-credit">By <a href="#">Tabula Ethica AI</a></span>
     </div>
   </div>
@@ -161,7 +161,7 @@
     <div class="stat"><div class="stat-label">Total State Bills</div><div class="stat-value" style="color:#5c4a6e">1,561</div><div class="stat-sub">45 states</div></div>
     <div class="stat"><div class="stat-label">Chatbot Safety Bills</div><div class="stat-value" style="color:#3d3450">78</div><div class="stat-sub">27 states</div></div>
     <div class="stat"><div class="stat-label">States with AI Laws in Effect</div><div class="stat-value" style="color:#5c4a6e">5</div><div class="stat-sub">CA, IL, NY, TX + CT deadline Jul 2026 (CO delayed to Jun 2026)</div></div>
-    <div class="stat"><div class="stat-label">Federal AI Bills</div><div class="stat-value" style="color:#8e78a0">20+</div><div class="stat-sub">1 signed into law</div></div>
+    <div class="stat"><div class="stat-label">Federal AI Bills</div><div class="stat-value" style="color:#8e78a0">20+</div><div class="stat-sub">1 signed into law (TAKE IT DOWN Act)</div></div>
     <div class="stat"><div class="stat-label">State Data Center Bills</div><div class="stat-value" style="color:#5c4a6e">200+</div><div class="stat-sub">40+ enacted (2025)</div></div>
   </div>
 
@@ -493,7 +493,7 @@
           <tbody>
             <tr><td style="font-weight:500;color:#3d3450">Texas TRAIGA (HB 149)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00149S.htm" target="_blank" style="color:#5c4a6e;font-weight:500">Texas Capitol</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Colorado SB24-205</td><td>Delayed to Jun 30, 2026 (by SB25B-004)</td><td style="text-align:center"><a href="https://leg.colorado.gov/bills/sb24-205" target="_blank" style="color:#5c4a6e;font-weight:500">CO Legislature</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">California AI Transparency Act (SB 942)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB942" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">California AI Transparency Act (SB 942, amended by AB 853)</td><td>Effective Aug 2, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB942" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California Companion AI Chatbot Safety Act (SB 243)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California Frontier AI Transparency Act (SB 53)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California AI Training Data Transparency (AB 2013)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
@@ -593,7 +593,7 @@
   </div>
 
   <div class="footer">
-    This dashboard is informational only and does not constitute legal, regulatory, or policy advice. Data is sourced from public databases; per-category bill breakdowns are estimates and may not reflect current legislative status. Verify figures against original sources before making professional or organizational decisions. Direct links to official documents are available on the Sources &amp; Bills tab. Research was gathered and visualized with the assistance of AI. &copy; 2026 Tabula Ethica AI.
+    This dashboard is informational only and does not constitute legal, regulatory, or policy advice. Data is sourced from public databases; per-category bill breakdowns are estimates and may not reflect current legislative status. Verify figures against original sources before making professional or organizational decisions. Direct links to official documents are available on the Sources &amp; Bills tab. Research was gathered and visualized with the assistance of AI.<br><br>Sources: White House releases, Congress.gov, state legislature websites, MultiState.ai, IAPP, Transparency Coalition, Brennan Center, Reuters, and Congressional materials.<br>&copy; 2026 Tabula Ethica AI.
   </div>
 </div>
 
@@ -654,7 +654,7 @@ const tl = [
   { date: "Dec 2025", event: "New York RAISE Act signed (effective Jan 2027)", type: "state", done: true },
   { date: "Dec 2025", event: "Administration's AI Preemption Executive Order", type: "federal", done: true },
   { date: "Jan 2026", event: "Texas TRAIGA effective", type: "state", done: true },
-  { date: "Jan 2026", event: "California AI Transparency Act (SB 942) effective", type: "state", done: true },
+  { date: "Aug 2, 2026", event: "California AI Transparency Act (SB 942) effective (delayed by AB 853)", type: "state", done: false },
   { date: "Jan 2026", event: "California Chatbot Safety Act (SB 243) effective", type: "state", done: true },
   { date: "Jan 2026", event: "California Frontier AI Transparency (SB 53) effective", type: "state", done: true },
   { date: "Jan 2026", event: "California AI Training Data Transparency (AB 2013) effective", type: "state", done: true },
