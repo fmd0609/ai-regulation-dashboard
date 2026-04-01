@@ -160,7 +160,7 @@
   <div class="stats">
     <div class="stat"><div class="stat-label">Total State Bills</div><div class="stat-value" style="color:#5c4a6e">1,561</div><div class="stat-sub">45 states</div></div>
     <div class="stat"><div class="stat-label">Chatbot Safety Bills</div><div class="stat-value" style="color:#3d3450">78</div><div class="stat-sub">27 states</div></div>
-    <div class="stat"><div class="stat-label">Laws Now Enforceable</div><div class="stat-value" style="color:#5c4a6e">3</div><div class="stat-sub">TX, CO, CA</div></div>
+    <div class="stat"><div class="stat-label">States with AI Laws in Effect</div><div class="stat-value" style="color:#5c4a6e">5</div><div class="stat-sub">CA, IL, NY, TX + CT deadline Jul 2026 (CO delayed to Jun 2026)</div></div>
     <div class="stat"><div class="stat-label">Federal AI Bills</div><div class="stat-value" style="color:#8e78a0">20+</div><div class="stat-sub">1 signed into law</div></div>
     <div class="stat"><div class="stat-label">State Data Center Bills</div><div class="stat-value" style="color:#5c4a6e">200+</div><div class="stat-sub">40+ enacted (2025)</div></div>
   </div>
@@ -171,7 +171,7 @@
     <div class="tab" onclick="switchTab('timeline')">Regulatory Timeline</div>
     <div class="tab" onclick="switchTab('pipeline')">Exec. Order &rarr; Bill Pipeline</div>
     <div class="tab" onclick="switchTab('datacenter')">Data Centers</div>
-    <div class="tab" onclick="switchTab('tensions')">Key Tensions</div>
+    <div class="tab" onclick="switchTab('tensions')">Key Issues</div>
     <div class="tab" onclick="switchTab('sources')">Sources & Bills</div>
   </div>
 
@@ -192,7 +192,7 @@
   <div id="timeline" class="section">
     <div class="card">
       <h2>Regulatory Timeline</h2>
-      <div class="subtitle">Key dates from May 2025 through November 2026</div>
+      <div class="subtitle">Major federal and state milestones in AI regulation, from the first signed law (May 2025) through early 2027. Covers executive orders, state laws taking effect, and upcoming deadlines.</div>
       <div class="tl" id="timeline-items"></div>
       <div class="tl-legend">
         <span><span class="tl-legend-dot" style="background:#3d3450"></span> Federal</span>
@@ -208,7 +208,7 @@
   <div id="pipeline" class="section">
     <div class="card">
       <h2>Executive Order &rarr; Agency Actions &rarr; Legislation Pipeline</h2>
-      <div class="subtitle">How the Executive Order, the Commerce Department review, the Department of Justice task force, and the Blackburn bill connect</div>
+      <div class="subtitle">How the Executive Order, the Department of Commerce review, the Department of Justice task force, and Senator Blackburn's bill connect</div>
 
       <!-- Stage 1 -->
       <div class="stage">
@@ -218,9 +218,9 @@
           <span class="badge" style="background:#5c4a6e;color:#ffffff">Active</span>
         </div>
         <div class="stage-body" style="border-color:#3d3450">
-          <p>Sets the policy goal: keep federal AI rules as light as possible. Tells agencies to act, but on its own it can't override state laws.</p>
+          <p>Sets the policy goal: keep federal AI rules as light as possible. Directs agencies to act, though on its own an executive order generally cannot override state laws.</p>
           <div class="stage-tags">
-            <span class="stage-tag">Orders Commerce Dept. review</span>
+            <span class="stage-tag">Orders Department of Commerce review</span>
             <span class="stage-tag">Creates Dept. of Justice task force</span>
             <span class="stage-tag">Broadband funding as leverage</span>
             <span class="stage-tag">Requests bill recommendations</span>
@@ -238,27 +238,27 @@
         <div class="stage-body" style="border-color:#5c4a6e">
           <div class="agency-card">
             <span class="agency-status" style="background:#5c4a6e;color:#ffffff">Due / Reported</span>
-            <div class="agency-title">Commerce Review (due Mar 11)</div>
-            <div class="agency-desc">Reported to label California, Colorado, and Texas AI laws as overly burdensome. Focuses on transparency requirements and laws that tell AI systems what they can or can't produce. Full public release unconfirmed.</div>
-            <div class="agency-role" style="color:#5c4a6e">&rarr; Creates the target list for Department of Justice lawsuits and broadband funding pressure</div>
+            <div class="agency-title">Department of Commerce Review (due Mar 11)</div>
+            <div class="agency-desc">Reported to have flagged California, Colorado, and Texas AI laws as overly burdensome, focusing on transparency requirements and laws governing what AI systems can or can't produce. A full public release has not been confirmed.</div>
+            <div class="agency-role" style="color:#5c4a6e">&rarr; Creates the target list for Department of Justice lawsuits and conditional broadband funding</div>
           </div>
           <div class="agency-card">
             <span class="agency-status" style="background:#e2dce8;color:#3d3450">Operational</span>
             <div class="agency-title">Dept. of Justice AI Litigation Task Force (Jan 9)</div>
-            <div class="agency-desc">Suing states in federal court, arguing their AI laws interfere with business across state lines and should be overridden by federal policy.</div>
-            <div class="agency-role" style="color:#5c4a6e">&rarr; Uses the Commerce review as its list of which states to target</div>
+            <div class="agency-desc">Authorized to bring challenges in federal court, arguing that certain state AI laws interfere with business across state lines and should be overridden by federal policy.</div>
+            <div class="agency-role" style="color:#5c4a6e">&rarr; Uses the Department of Commerce review as its list of which states to target</div>
           </div>
           <div class="agency-card">
             <span class="agency-status" style="background:#e2dce8;color:#3d3450">Operational</span>
             <div class="agency-title">Broadband Funding Leverage &mdash; BEAD Program ($42B)</div>
-            <div class="agency-desc">The federal broadband grant program (Broadband Equity, Access, and Deployment) ties funding to states rolling back AI laws the Commerce Dept. flagged.</div>
-            <div class="agency-role" style="color:#5c4a6e">&rarr; Financial pressure: comply or risk losing broadband money</div>
+            <div class="agency-desc">The executive order directs the Department of Commerce to condition certain remaining non-deployment BEAD (Broadband Equity, Access, and Deployment) funds on whether a state has AI laws the Department flags as overly burdensome, to the maximum extent allowed by federal law.</div>
+            <div class="agency-role" style="color:#5c4a6e">&rarr; Financial pressure on states, but limited to non-deployment funds and subject to legal constraints</div>
           </div>
           <div class="agency-card">
             <span class="agency-status" style="background:#e2dce8;color:#5c4a6e">Due</span>
             <div class="agency-title">Federal Trade Commission (FTC) AI Policy Statement (Mar 11)</div>
-            <div class="agency-desc">Sets the tone for how the government will go after misleading or deceptive AI practices.</div>
-            <div class="agency-role" style="color:#5c4a6e">&rarr; Creates the enforcement starting point that the Blackburn bill would build on</div>
+            <div class="agency-desc">Expected to outline how the government may address misleading or deceptive AI practices.</div>
+            <div class="agency-role" style="color:#5c4a6e">&rarr; Creates the enforcement starting point that Senator Blackburn's bill would build on</div>
           </div>
         </div>
       </div>
@@ -271,8 +271,8 @@
           <span class="badge" style="background:#e2dce8;color:#5c4a6e">Expected soon</span>
         </div>
         <div class="stage-body" style="border-color:#8e78a0">
-          <p>Started by David Sacks (former White House AI &amp; Crypto Advisor, now co-chair of the President's Council of Advisors on Science and Technology as of Mar 2026) and the Science &amp; Tech Advisor. Expected to shape the Blackburn bill.</p>
-          <div class="clock-note">&#128339; Sacks left his White House advisory role in Mar 2026; it's unclear whether the recommendation was finalized</div>
+          <p>Led by David Sacks (White House Special Advisor for AI &amp; Crypto) and the Science &amp; Tech Advisor. Mr. Sacks was also named co-chair of the President's Council of Advisors on Science and Technology (PCAST). Expected to shape Senator Blackburn's bill.</p>
+          <div class="clock-note">&#128339; Pending release &mdash; expected to merge with or inform Senator Blackburn's draft</div>
         </div>
       </div>
 
@@ -280,7 +280,7 @@
       <div class="stage">
         <div class="stage-header">
           <div class="stage-num" style="background:#5c4a6e">4</div>
-          <h3>TRUMP AMERICA AI Act (Blackburn Draft, Mar 18)</h3>
+          <h3>TRUMP AMERICA AI Act (Senator Blackburn's Draft, Mar 18)</h3>
           <span class="badge" style="background:#5c4a6e;color:#ffffff">Discussion draft</span>
         </div>
         <div class="stage-body" style="border-color:#5c4a6e;border-left:none;padding-bottom:0">
@@ -292,16 +292,16 @@
     <!-- Codification table -->
     <div class="card">
       <h2>What the Bill Codifies</h2>
-      <div class="subtitle">How each Executive Order / agency action maps to a provision in the Blackburn bill</div>
+      <div class="subtitle">How each Executive Order / agency action maps to a provision in Senator Blackburn's bill</div>
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
         <table>
           <thead><tr><th>Executive Order / Agency Action</th><th>What the Bill Does With It</th><th style="text-align:center;width:130px">Status Without Bill</th></tr></thead>
           <tbody>
-            <tr><td style="font-weight:500;color:#3d3450">Commerce Dept. review findings</td><td>Gives the Commerce Department legal authority to withhold broadband (BEAD) funds from states with flagged AI laws</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Advisory only</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Department of Commerce review findings</td><td>Gives the Department of Commerce legal authority to condition remaining non-deployment broadband (BEAD) funds on states repealing flagged AI laws</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Advisory only</span></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Dept. of Justice AI Task Force</td><td>Makes it a permanent legal body; directs it to challenge state laws that burden business across state lines</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Active via Exec. Order</span></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Federal override of state laws</td><td>Turns the Executive Order's wish into actual legal authority to override state AI laws on advanced AI risk and digital replicas</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#fff">No legal force</span></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Federal Trade Commission role</td><td>Requires companies to protect users from AI harms; gives the FTC power to write and enforce rules</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Existing authority</span></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">Exceptions (child safety, data centers, govt. purchasing)</td><td>Keeps the same exceptions from the Executive Order &mdash; states can still regulate in these areas</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Exec. Order exceptions</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Exceptions (child safety, data centers, government purchasing)</td><td>Keeps the same exceptions from the Executive Order &mdash; states can still regulate in these areas</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Exec. Order exceptions</span></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Copyright / training data</td><td>Says using copyrighted work to train AI without permission is not fair use</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#fff">No federal position</span></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Digital likeness (No Fakes)</td><td>Gives people the right to control AI-generated copies of their voice and appearance</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#fff">No federal law</span></td></tr>
           </tbody>
@@ -312,7 +312,7 @@
     <!-- Bottom line -->
     <div class="bottom-box">
       <h3>Bottom Line</h3>
-      <p>The agency actions (Commerce Dept. review, Justice Dept. task force, broadband funding pressure) are <strong>already happening</strong> and don't depend on the bill passing. The bill would make them permanent and give them real legal teeth. If it stalls &mdash; which most experts expect &mdash; the Justice Department lawsuits become the main federal tool for pushing back on state laws.</p>
+      <p>The agency actions (the Department of Commerce review, the Department of Justice task force, and conditional broadband funding) are <strong>already underway</strong> and don't depend on the bill passing. The bill would make them permanent and give them legal teeth. If it stalls The agency actions (Commerce Dept. review, Justice Dept. task force, broadband funding pressure) are <strong>already happening</strong> and don't depend on the bill passing. The bill would make them permanent and give them real legal teeth. If it stalls &mdash; which most experts expect &mdash; the Justice Department lawsuits become the main federal tool for pushing back on state laws.mdash; which many observers expect The agency actions (Commerce Dept. review, Justice Dept. task force, broadband funding pressure) are <strong>already happening</strong> and don't depend on the bill passing. The bill would make them permanent and give them real legal teeth. If it stalls &mdash; which most experts expect &mdash; the Justice Department lawsuits become the main federal tool for pushing back on state laws.mdash; the Department of Justice lawsuits could become the primary federal tool for challenging state laws.</p>
       <div class="bottom-legend">
         <span><span class="bottom-legend-dot" style="background:#8e78a0"></span> Active now</span>
         <span><span class="bottom-legend-dot" style="background:#e2dce8"></span> Pending</span>
@@ -325,7 +325,7 @@
   <div id="datacenter" class="section">
     <div class="card">
       <h2>Data Center Policy: Federal vs. State</h2>
-      <div class="subtitle">The federal government wants to accelerate buildout. States want guardrails. The preemption Executive Order explicitly carves out data center infrastructure &mdash; states keep authority here.</div>
+      <div class="subtitle">The federal government is looking to accelerate buildout while states are focused on guardrails. Notably, the preemption Executive Order explicitly carves out data center infrastructure The federal government wants to accelerate buildout. States want guardrails. The preemption Executive Order explicitly carves out data center infrastructure &mdash; states keep authority here.mdash; meaning states retain authority here.</div>
 
       <div class="dc-grid">
         <div class="dc-box" style="border-color:#3d3450;background:#ece8f0">
@@ -335,7 +335,7 @@
             <li><span style="color:#5c4a6e">&#10003;</span> Federal land for data center development</li>
             <li><span style="color:#5c4a6e">&#10003;</span> $500M+ investment / 100+ megawatt thresholds</li>
             <li><span style="color:#5c4a6e">&#10003;</span> Voluntary Ratepayer Pledge (Mar 2026)</li>
-            <li><span style="color:#8e78a0">&#9679;</span> Cotton DATA Act: let data centers bypass federal power grid rules</li>
+            <li><span style="color:#8e78a0">&#9679;</span> Senator Cotton's DATA Act: let data centers bypass federal power grid rules</li>
           </ul>
         </div>
         <div class="dc-box" style="border-color:#5c4a6e;background:#ebe5f0">
@@ -424,11 +424,11 @@
     </div>
   </div>
 
-  <!-- TAB 5: Key Tensions -->
+  <!-- TAB 5: Key Issues -->
   <div id="tensions" class="section">
     <div class="card">
-      <h2>Six Key Tensions</h2>
-      <div class="subtitle">The fault lines shaping U.S. AI regulation right now</div>
+      <h2>Key Issues</h2>
+      <div class="subtitle">Seven issues at the center of the U.S. AI regulation debate</div>
       <div id="tension-list"></div>
     </div>
   </div>
@@ -445,8 +445,8 @@
             <tr><td style="font-weight:500;color:#3d3450">TAKE IT DOWN Act (S. 146)</td><td>Signed into law, May 2025</td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/146" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">AI Preemption Executive Order</td><td>Executive Order, Dec 2025</td><td style="text-align:center"><a href="https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/" target="_blank" style="color:#5c4a6e;font-weight:500">WhiteHouse.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">DEFIANCE Act (S. 1837)</td><td>Passed Senate, Jan 2026</td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1837" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">TRUMP AMERICA AI Act (Blackburn Draft)</td><td>Discussion draft, Mar 2026</td><td style="text-align:center"><a href="https://www.blackburn.senate.gov/2026/3/technology/blackburn-releases-discussion-draft-of-national-policy-framework-for-artificial-intelligence/3b3b6458-b6c7-478b-9859-374949586765" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">Cotton DATA Act</td><td>Introduced, Jan 2026</td><td style="text-align:center"><a href="https://www.cotton.senate.gov/news/press-releases/cotton-introduces-bill-to-lower-energy-costs-for-arkansans" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">TRUMP AMERICA AI Act (Senator Blackburn's Draft)</td><td>Discussion draft, Mar 2026</td><td style="text-align:center"><a href="https://www.blackburn.senate.gov/2026/3/technology/blackburn-releases-discussion-draft-of-national-policy-framework-for-artificial-intelligence/3b3b6458-b6c7-478b-9859-374949586765" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Senator Cotton's DATA Act</td><td>Introduced, Jan 2026</td><td style="text-align:center"><a href="https://www.cotton.senate.gov/news/press-releases/cotton-introduces-bill-to-lower-energy-costs-for-arkansans" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Ratepayer Protection Pledge</td><td>Proclamation, Mar 2026</td><td style="text-align:center"><a href="https://www.whitehouse.gov/presidential-actions/2026/03/ratepayer-protection-pledge-proclamation/" target="_blank" style="color:#5c4a6e;font-weight:500">WhiteHouse.gov</a></td></tr>
           </tbody>
         </table>
@@ -472,12 +472,12 @@
           </tbody>
         </table>
       </div>
-      <div style="margin-top:12px;font-size:12px;color:#8e78a0">Note: The Blackburn TRUMP AMERICA AI Act (discussion draft) rolls the Kids Online Safety Act, the NO FAKES Act, and copyright protections into one big bill. See Pipeline tab for details. For the full list of 20+ AI bills, see the <a href="https://www.brennancenter.org/our-work/research-reports/artificial-intelligence-legislation-tracker" target="_blank" style="color:#5c4a6e">Brennan Center AI Legislation Tracker</a>.</div>
+      <div style="margin-top:12px;font-size:12px;color:#8e78a0">Note: Senator Blackburn's TRUMP AMERICA AI Act (discussion draft) is a sweeping 291-page bill that goes well beyond the items above. It also includes the Kids Online Safety Act, the NO FAKES Act, copyright protections, a chatbot duty of care, AI-related job-effects reporting, a repeal of Section 230, a national AI research resource, research and standards provisions, and data center ratepayer protections. See the Pipeline tab for how it connects to the Executive Order. For the full list of 20+ AI bills, see the <a href="https://www.brennancenter.org/our-work/research-reports/artificial-intelligence-legislation-tracker" target="_blank" style="color:#5c4a6e">Brennan Center AI Legislation Tracker</a>.</div>
     </div>
 
     <div class="card">
       <h2>White House AI Policy Framework (Mar 20, 2026)</h2>
-      <div class="subtitle">Non-binding legislative recommendations released alongside the Blackburn draft</div>
+      <div class="subtitle">Non-binding legislative recommendations released alongside Senator Blackburn's draft</div>
       <div style="background:#ebe5f0;border:1px solid #8e78a0;border-radius:8px;padding:16px;font-size:13px;color:#3d3450">
         The White House released a wish list for Congress on how to regulate AI. Key proposals: a single federal standard that would override state AI laws, a requirement that companies take reasonable steps to protect people from AI harms (enforced by the Federal Trade Commission), copyright protections for work used to train AI, and child safety rules. This is just a recommendation &mdash; Congress has to pass a bill to make any of it real.
         <div style="margin-top:8px"><a href="https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/" target="_blank" style="color:#5c4a6e;font-weight:500">Read the framework &rarr;</a></div>
@@ -486,14 +486,71 @@
 
     <div class="card">
       <h2>State Laws</h2>
-      <div class="subtitle">Official text of the three enforceable state AI laws</div>
+      <div class="subtitle">Key state AI laws enacted or in effect as of early 2026</div>
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
         <table>
           <thead><tr><th>Law</th><th>Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
           <tbody>
             <tr><td style="font-weight:500;color:#3d3450">Texas TRAIGA (HB 149)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00149S.htm" target="_blank" style="color:#5c4a6e;font-weight:500">Texas Capitol</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">Colorado SB24-205</td><td>Effective Feb 1, 2026</td><td style="text-align:center"><a href="https://leg.colorado.gov/bills/sb24-205" target="_blank" style="color:#5c4a6e;font-weight:500">CO Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Colorado SB24-205</td><td>Delayed to Jun 30, 2026 (by SB25B-004)</td><td style="text-align:center"><a href="https://leg.colorado.gov/bills/sb24-205" target="_blank" style="color:#5c4a6e;font-weight:500">CO Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California AI Transparency Act (SB 942)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB942" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">California Companion AI Chatbot Safety Act (SB 243)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">California Frontier AI Transparency Act (SB 53)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">California AI Training Data Transparency (AB 2013)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">California Employment AI Regulations (CCRC/FEHA)</td><td>Effective Oct 1, 2025</td><td style="text-align:center"><a href="https://calcivilrights.ca.gov/employment/" target="_blank" style="color:#5c4a6e;font-weight:500">CA Civil Rights</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Illinois Employment AI Act (HB 3773)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://www.ilga.gov/legislation/billstatus.asp?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&LegID=152740&SessionID=112" target="_blank" style="color:#5c4a6e;font-weight:500">IL Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">New York RAISE Act (AB 6453)</td><td>Signed Dec 19, 2025; effective Jan 1, 2027</td><td style="text-align:center"><a href="https://www.nysenate.gov/legislation/bills/2025/A6453" target="_blank" style="color:#5c4a6e;font-weight:500">NY Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">New York Algorithmic Pricing Disclosure (S 3008)</td><td>Effective Nov 10, 2025</td><td style="text-align:center"><a href="https://www.nysenate.gov/legislation/bills/2025/S3008" target="_blank" style="color:#5c4a6e;font-weight:500">NY Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Connecticut CTDPA AI Amendment (PA 25-113)</td><td>Signed Jun 25, 2025; deadline Jul 1, 2026</td><td style="text-align:center"><a href="https://www.cga.ct.gov/asp/cgabillstatus/cgabillstatus.asp?selBillType=Public+Act&which_year=2025&bill_num=113" target="_blank" style="color:#5c4a6e;font-weight:500">CT Legislature</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Chatbot Safety Bills Advancing (2026)</h2>
+      <div class="subtitle">Several states are moving companion chatbot safety legislation through their legislatures. These are not yet signed into law but have cleared key votes.</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>State</th><th>Focus</th><th style="text-align:center;width:100px">Status</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">SB 796</td><td>Virginia</td><td>AI chatbot safety for minors; suicidal ideation protocols; incident reporting for platforms with 500K+ monthly active users</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Passed Senate 39-1</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">HB 2225</td><td>Washington</td><td>Companion chatbot safety requirements</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Final passage Feb 2026</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">SB 1546</td><td>Oregon</td><td>Require disclosure that chatbot is not human; suicidal ideation procedures</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Passed Senate 26-1</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:#8e78a0">Note: As of mid-2025, 48 states have enacted some form of deepfake legislation (Missouri and New Mexico being the exceptions), with 30 states specifically addressing nonconsensual intimate image deepfakes. Source: <a href="https://www.citizen.org/article/tracker-intimate-deepfakes-state-legislation/" target="_blank" style="color:#5c4a6e">Public Citizen Deepfake Legislation Tracker</a>.</div>
+    </div>
+
+    <div class="card">
+      <h2>Federal Enforcement Actions</h2>
+      <div class="subtitle">How federal agencies are already using existing authority to go after misleading or harmful AI practices</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Action</th><th>Agency</th><th>What Happened</th><th style="text-align:center;width:100px">Year</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">Operation AI Comply</td><td>Federal Trade Commission</td><td>Series of enforcement cases targeting companies making false claims about AI capabilities, including misleading accuracy and earnings claims</td><td style="text-align:center">2025</td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Nate Inc. / Albert Saniger</td><td>Securities and Exchange Commission + Dept. of Justice</td><td>$42M raised through false AI product claims; parallel criminal and civil enforcement action</td><td style="text-align:center">Apr 2025</td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Presto Automation</td><td>Securities and Exchange Commission</td><td>Enforcement action over false claims that its restaurant AI product was fully automated</td><td style="text-align:center">Jan 2025</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:#8e78a0">The SEC has described "AI washing" &mdash; companies exaggerating their use of AI to attract investors &mdash; as a growing enforcement priority. The FTC is using its existing authority under Section 5 (unfair or deceptive practices) to pursue AI-related cases even without new legislation.</div>
+    </div>
+
+    <div class="card">
+      <h2>Major AI Copyright &amp; Litigation</h2>
+      <div class="subtitle">High-profile lawsuits and court rulings that may shape how AI training and output are regulated</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Case / Ruling</th><th>Parties</th><th>Significance</th><th style="text-align:center;width:100px">Status</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">Bartz v. Anthropic</td><td>Authors vs. Anthropic</td><td>$1.5B settlement over training on pirated books. Court ruled training itself may be fair use, but storing pirated copies is not.</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Settled 2025</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Universal Music v. Anthropic</td><td>Universal Music vs. Anthropic</td><td>$3.1B lawsuit alleging AI was trained on pirated music content</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Filed Jan 2026</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Writers&rsquo; Copyright Lawsuit</td><td>Carreyrou et al. vs. Anthropic, Google, OpenAI, Meta, xAI, Perplexity</td><td>Authors allege AI companies used pirated books for training data</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Filed 2026</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Musk v. OpenAI / Microsoft</td><td>Elon Musk vs. OpenAI, Microsoft</td><td>Federal judge rejected motion to dismiss; case proceeding to jury trial over OpenAI&rsquo;s transition from nonprofit to for-profit</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Trial ordered</span></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">U.S. Supreme Court &mdash; AI Authorship</td><td>Various</td><td>Denied certiorari (Mar 2, 2026), reaffirming that AI-generated works cannot receive copyright protection &mdash; only human authors can</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Decided</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -526,6 +583,9 @@
             <tr><td style="font-weight:500;color:#3d3450">Federal AI Push Analysis</td><td>Ropes & Gray</td><td style="text-align:center"><a href="https://www.ropesgray.com/en/insights/alerts/2026/03/examining-the-landscape-and-limitations-of-the-federal-push-to-override-state-ai-regulation" target="_blank" style="color:#5c4a6e;font-weight:500">RopesGray.com</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">March 2026 Federal Deadlines</td><td>Baker Botts</td><td style="text-align:center"><a href="https://www.bakerbotts.com/thought-leadership/publications/2026/january/us-ai-law-update" target="_blank" style="color:#5c4a6e;font-weight:500">BakerBotts.com</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">Inside the Dept. of Justice Task Force</td><td>Baker Botts</td><td style="text-align:center"><a href="https://www.bakerbotts.com/thought-leadership/publications/2026/january/inside-the-dojs-new-ai-litigation-task-force" target="_blank" style="color:#5c4a6e;font-weight:500">BakerBotts.com</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Deepfake State Legislation Tracker</td><td>Public Citizen</td><td style="text-align:center"><a href="https://www.citizen.org/article/tracker-intimate-deepfakes-state-legislation/" target="_blank" style="color:#5c4a6e;font-weight:500">PublicCitizen.org</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">AI Legislative Update (Mar 2026)</td><td>Transparency Coalition</td><td style="text-align:center"><a href="https://www.transparencycoalition.ai/news/ai-legislative-update-march13-2026" target="_blank" style="color:#5c4a6e;font-weight:500">TransparencyCoalition</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">AI Copyright Lawsuit Tracker</td><td>Copyright Alliance</td><td style="text-align:center"><a href="https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/" target="_blank" style="color:#5c4a6e;font-weight:500">CopyrightAlliance.org</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -548,7 +608,7 @@ function switchTab(id) {
         (id === 'timeline' && t.textContent === 'Regulatory Timeline') ||
         (id === 'pipeline' && t.textContent.includes('Pipeline')) ||
         (id === 'datacenter' && t.textContent === 'Data Centers') ||
-        (id === 'tensions' && t.textContent === 'Key Tensions') ||
+        (id === 'tensions' && t.textContent === 'Key Issues') ||
         (id === 'sources' && t.textContent.includes('Sources'))) {
       t.classList.add('active');
     }
@@ -560,18 +620,23 @@ function switchTab(id) {
 // govt use, procurement, workforce, education, election, study commissions, etc.
 // Many bills span multiple categories. Source: MultiState.ai, IAPP, Transparency Coalition.
 const bills = [
-  { name: "Govt Use / Procurement", bills: 320, states: 40, color: "#3d3450" },
+  { name: "Govt Use / Procurement", bills: 320, states: 40, color: "#5c4a6e" },
+  { name: "Education / AI Literacy", bills: 180, states: 38, color: "#5c4a6e" },
   { name: "Deepfakes / Replicas", bills: 180, states: 35, color: "#5c4a6e" },
-  { name: "Transparency / Disclosure", bills: 150, states: 32, color: "#6b5880" },
-  { name: "Employment / Hiring", bills: 120, states: 28, color: "#7a6690" },
-  { name: "Chatbot Safety", bills: 78, states: 27, color: "#3d3450" },
-  { name: "Healthcare AI", bills: 70, states: 22, color: "#8e78a0" },
+  { name: "Transparency / Disclosure", bills: 150, states: 32, color: "#5c4a6e" },
+  { name: "Elections / Political Ads", bills: 120, states: 28, color: "#5c4a6e" },
+  { name: "Employment / Hiring", bills: 120, states: 28, color: "#5c4a6e" },
+  { name: "Law Enforcement / Criminal Justice", bills: 90, states: 25, color: "#5c4a6e" },
+  { name: "Chatbot Safety", bills: 78, states: 27, color: "#5c4a6e" },
+  { name: "Healthcare AI", bills: 70, states: 22, color: "#5c4a6e" },
+  { name: "Data Privacy / Surveillance", bills: 65, states: 20, color: "#5c4a6e" },
   { name: "Liability / Accountability", bills: 55, states: 18, color: "#5c4a6e" },
-  { name: "Algorithmic Pricing", bills: 28, states: 12, color: "#7a6690" },
-  { name: "Training Data / Copyright", bills: 22, states: 10, color: "#6b5880" },
-  { name: "Other (education, etc.)", bills: 538, states: 45, color: "#8e78a0" },
+  { name: "Autonomous Vehicles", bills: 40, states: 15, color: "#5c4a6e" },
+  { name: "Algorithmic Pricing", bills: 28, states: 12, color: "#5c4a6e" },
+  { name: "Training Data / Copyright", bills: 22, states: 10, color: "#5c4a6e" },
+  { name: "Other / Misc.", bills: 43, states: 20, color: "#5c4a6e" },
 ];
-const maxBills = 538;
+const maxBills = 320;
 let barsHtml = '';
 bills.forEach(b => {
   const bw = (b.bills / maxBills * 100) * 0.65;
@@ -584,18 +649,27 @@ document.getElementById('bill-bars').innerHTML = barsHtml;
 const tl = [
   { date: "May 2025", event: "TAKE IT DOWN Act signed", type: "federal", done: true },
   { date: "Jul 2025", event: "Executive Order: Fast-Track Data Center Permitting", type: "datacenter", done: true },
-  { date: "Dec 2025", event: "Trump AI Preemption Executive Order", type: "federal", done: true },
+  { date: "Oct 2025", event: "California Employment AI Regulations effective (CCRC/FEHA)", type: "state", done: true },
+  { date: "Nov 2025", event: "New York Algorithmic Pricing Disclosure Law effective", type: "state", done: true },
+  { date: "Dec 2025", event: "New York RAISE Act signed (effective Jan 2027)", type: "state", done: true },
+  { date: "Dec 2025", event: "Administration's AI Preemption Executive Order", type: "federal", done: true },
   { date: "Jan 2026", event: "Texas TRAIGA effective", type: "state", done: true },
+  { date: "Jan 2026", event: "California AI Transparency Act (SB 942) effective", type: "state", done: true },
+  { date: "Jan 2026", event: "California Chatbot Safety Act (SB 243) effective", type: "state", done: true },
+  { date: "Jan 2026", event: "California Frontier AI Transparency (SB 53) effective", type: "state", done: true },
+  { date: "Jan 2026", event: "California AI Training Data Transparency (AB 2013) effective", type: "state", done: true },
+  { date: "Jan 2026", event: "Illinois Employment AI Act (HB 3773) effective", type: "state", done: true },
   { date: "Jan 9, 2026", event: "Dept. of Justice AI Litigation Task Force", type: "federal", done: true },
   { date: "Jan 2026", event: "DEFIANCE Act passes Senate", type: "federal", done: true },
-  { date: "Mar 2026", event: "Commerce Dept. state law review due", type: "federal", done: true },
-  { date: "Mar 2026", event: "Federal Trade Commission AI policy statement due", type: "federal", done: true },
+  { date: "Mar 2026", event: "Dept. of Commerce state law review due", type: "federal", done: true },
+  { date: "Mar 2026", event: "Federal Trade Commission AI policy statement", type: "federal", done: true },
   { date: "Mar 2026", event: "Ratepayer Protection Pledge launched", type: "datacenter", done: true },
-  { date: "Mar 2026", event: "Blackburn draft framework", type: "federal", done: false },
-  { date: "Mar 2026", event: "Cotton DATA Act introduced", type: "datacenter", done: false },
-  { date: "Feb 2026", event: "Colorado SB24-205 effective", type: "state", done: true },
-  { date: "Jan 2026", event: "California AI Transparency Act effective", type: "state", done: true },
-  { date: "Nov 2026", event: "Midterm elections (no deepfake law)", type: "milestone", done: false },
+  { date: "Mar 2026", event: "Senator Blackburn's draft framework", type: "federal", done: false },
+  { date: "Mar 2026", event: "Senator Cotton's DATA Act introduced", type: "datacenter", done: false },
+  { date: "Jun 30, 2026", event: "Colorado SB24-205 effective (delayed by SB25B-004)", type: "state", done: false },
+  { date: "Jul 2026", event: "Connecticut CTDPA AI Amendment compliance deadline", type: "state", done: false },
+  { date: "Nov 2026", event: "Midterm elections (no federal deepfake law)", type: "milestone", done: false },
+  { date: "Jan 2027", event: "New York RAISE Act effective", type: "state", done: false },
 ];
 const typeColors = { federal: "#3d3450", state: "#5c4a6e", datacenter: "#8e78a0", milestone: "#3d3450" };
 const typeBg = { federal: "#e2dce8", state: "#ebe5f0", datacenter: "#e5dfe9", milestone: "#e2dce8" };
@@ -618,7 +692,7 @@ document.getElementById('timeline-items').innerHTML = tlHtml;
 const dcAreas = [
   { area: "Utility rates", state: "Higher rates for large data centers", fed: "No federal position", t: "medium" },
   { area: "Water usage", state: "Required reporting & cost recovery", fed: "No federal position", t: "medium" },
-  { area: "Energy source", state: "Renewable energy requirements", fed: "Cotton DATA Act: allow off-grid power", t: "high" },
+  { area: "Energy source", state: "Renewable energy requirements", fed: "Senator Cotton's DATA Act: allow off-grid power", t: "high" },
   { area: "Permitting", state: "Building freezes & site restrictions", fed: "Executive Order: streamline & fast-track", t: "high" },
   { area: "Grid impact", state: "Power grid reliability protections", fed: "Voluntary Ratepayer Pledge", t: "high" },
   { area: "Foreign ownership", state: "Security & ownership restrictions", fed: "National security alignment", t: "low" },
@@ -646,12 +720,13 @@ document.getElementById('dc-bars').innerHTML = dcBarsHtml;
 
 // Tensions
 const tensions = [
-  { num: 1, title: "Federal vs. State: Who Gets to Regulate AI?", desc: "The Executive Order wants to override state AI laws, but it can't do that on its own. States are pushing ahead anyway. Expect lawsuits.", risk: "high" },
-  { num: 2, title: "No Federal Deepfake Law Before Midterms", desc: "There's no federal law banning political deepfakes heading into November 2026. States are the only line of defense right now.", risk: "high" },
+  { num: 1, title: "Federal vs. State: Who Gets to Regulate AI?", desc: "The Executive Order signals an intent to override state AI laws, but on its own it may not have the legal authority to do so. States appear to be moving ahead regardless, which could lead to lawsuits.", risk: "high" },
+  { num: 2, title: "No Federal Deepfake Law Before Midterms", desc: "As of now, there's no federal law banning political deepfakes heading into the November 2026 midterms. That leaves state laws as the primary safeguard.", risk: "high" },
   { num: 3, title: "A Patchwork of State Rules", desc: "Every state has different timelines, definitions, and penalties. Companies have to comply with all of them at once — and prove they're doing it.", risk: "high" },
-  { num: 4, title: "Copyright and AI Training Data", desc: "The Blackburn bill could be the first time Congress takes a position on whether AI companies can train on copyrighted content without permission.", risk: "medium" },
-  { num: 5, title: "Chatbot Safety Is Gaining Steam", desc: "78 bills in 27 states. Protecting kids from harmful AI chatbots is becoming one of the few issues both parties agree on.", risk: "medium" },
-  { num: 6, title: "Data Centers: Energy, Water, and Land Use", desc: "The federal government is fast-tracking construction while states push back on power grid strain, water consumption, and local impacts.", risk: "high" },
+  { num: 4, title: "Copyright and AI Training Data", desc: "Senator Blackburn's bill could be the first time Congress takes a position on whether AI companies can train on copyrighted content without permission.", risk: "medium" },
+  { num: 5, title: "Chatbot Safety Is Gaining Steam", desc: "78 bills across 27 states so far. Protecting kids from harmful AI chatbots appears to be one of the few issues drawing bipartisan attention.", risk: "medium" },
+  { num: 6, title: "Data Centers: Energy, Water, and Land Use", desc: "The federal government is working to fast-track construction while some states are raising concerns about power grid strain, water consumption, and local impacts.", risk: "high" },
+  { num: 7, title: "The EU AI Act Applies to U.S. Companies Too", desc: "This dashboard focuses on U.S. regulation, but any American company offering AI products or services in the EU must also comply with the EU AI Act. Key obligations are already enforceable, with penalties of up to \u20AC35 million or 7% of global revenue. High-risk AI system requirements take effect in August 2026.", risk: "medium" },
 ];
 const riskStyles = {
   high: { border: "#8e78a0", bg: "#ebe5f0", numBg: "#5c4a6e", badgeBg: "#5c4a6e", badgeText: "#fff" },
