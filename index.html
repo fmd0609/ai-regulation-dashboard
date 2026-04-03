@@ -12,32 +12,22 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; background: #76677a; color: #3d3450; line-height: 1.5; }
     .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
-
-    /* Header */
-    .header { padding-bottom: 16px; border-bottom: 2px solid rgba(255,255,255,0.15); margin-bottom: 20px; }
-    .header h1 { font-size: 26px; font-weight: 700; color: #ffffff; }
-    .header-meta { display: flex; align-items: center; gap: 16px; margin-top: 6px; flex-wrap: wrap; }
-    .header-date { font-size: 13px; color: #e2dce8; }
-    .header-badge { font-size: 11px; padding: 3px 12px; border-radius: 99px; background: rgba(255,255,255,0.18); color: #ffffff; font-weight: 500; }
-    .header-credit { font-size: 12px; color: #e2dce8; margin-left: auto; }
-    .header-credit a { color: #ffffff; text-decoration: none; font-weight: 500; }
-    .header-credit a:hover { text-decoration: underline; }
-
+    h1 { font-size: 24px; font-weight: 700; color: #ffffff; }
     h2 { font-size: 18px; font-weight: 600; color: #3d3450; margin-bottom: 4px; }
     h3 { font-size: 14px; font-weight: 600; color: #3d3450; }
     .subtitle { font-size: 13px; color: #5c4a6e; margin-bottom: 20px; }
+    .date { font-size: 13px; color: #e2dce8; margin-top: 4px; }
 
     /* Stat cards */
     .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
-    .stat { background: #ffffff; border-radius: 12px; padding: 16px; border: 1px solid #e2dce8; transition: box-shadow 0.15s; box-shadow: 0 2px 8px rgba(61,52,80,0.12); }
-    .stat:hover { box-shadow: 0 4px 16px rgba(61,52,80,0.2); }
+    .stat { background: #ffffff; border-radius: 12px; padding: 16px; border: 1px solid #e2dce8; box-shadow: 0 2px 8px rgba(61,52,80,0.12); }
     .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: #5c4a6e; }
     .stat-value { font-size: 28px; font-weight: 700; margin-top: 4px; }
     .stat-sub { font-size: 11px; color: #8e78a0; margin-top: 2px; }
 
     /* Tabs */
     .tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-    .tab { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.22); color: #ffffff; transition: all 0.15s; user-select: none; }
+    .tab { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.22); color: #ffffff; transition: all 0.15s; }
     .tab:hover { background: rgba(255,255,255,0.35); }
     .tab.active { background: #ffffff; color: #3d3450; border-color: #ffffff; font-weight: 600; }
 
@@ -109,7 +99,7 @@
     /* DC bar chart */
     .dc-bar-row { display: flex; align-items: center; margin-bottom: 8px; }
     .dc-bar-label { width: 160px; font-size: 12px; color: #3d3450; flex-shrink: 0; }
-    .dc-bar { height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; color: #ffffff; font-weight: 600; min-width: 20px; }
+    .dc-bar { height: 24px; border-radius: 6px 6px 6px 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; color: #ffffff; font-weight: 600; min-width: 20px; }
 
     /* Tension cards */
     .tension { display: flex; align-items: flex-start; gap: 14px; padding: 14px; border-radius: 8px; border: 1px solid; margin-bottom: 12px; }
@@ -120,53 +110,32 @@
     .tension-level { flex-shrink: 0; font-size: 11px; padding: 3px 10px; border-radius: 99px; font-weight: 500; }
 
     /* Footer */
-    .footer { text-align: center; font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
-    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
+    .footer { text-align: center; font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 24px; padding-top: 16px; }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
       .dc-grid { grid-template-columns: 1fr; }
-      .header-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .header-credit { margin-left: 0; }
     }
-    @media (max-width: 480px) {
-      .stats { grid-template-columns: 1fr 1fr; }
-      .bar-label { width: 100px; font-size: 12px; }
-      .dc-bar-label { width: 120px; }
-      .tabs { gap: 6px; }
-      .tab { padding: 6px 12px; font-size: 12px; }
-    }
-
-    /* Smooth fade-in for tab content */
-    .section.active { animation: fadeIn 0.2s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 <body>
 <div class="container">
-  <!-- Header -->
-  <div class="header">
-    <h1>U.S. AI Regulation Dashboard</h1>
-    <div class="header-meta">
-      <span class="header-date">Last updated: April 2, 2026</span>
-      <span class="header-credit">By <a href="#">Tabula Ethica AI</a></span>
-    </div>
-  </div>
+  <h1>U.S. AI Regulation Dashboard</h1>
+  <div class="subtitle" style="color:#e2dce8;margin-bottom:4px">A plain-language overview of how AI is being regulated at the federal and state level, with links to official sources for further reading.</div>
+  <div class="date">Last updated: April 2, 2026</div>
 
   <!-- Stats -->
   <div class="stats">
-    <div class="stat"><div class="stat-label">Total State Bills</div><div class="stat-value" style="color:#5c4a6e">1,561</div><div class="stat-sub">45 states</div></div>
-    <div class="stat"><div class="stat-label">Chatbot Safety Bills</div><div class="stat-value" style="color:#3d3450">78</div><div class="stat-sub">27 states</div></div>
+    <div class="stat"><div class="stat-label">State AI Measures</div><div class="stat-value" style="color:#5c4a6e">1,561</div><div class="stat-sub">Bills, enacted laws &amp; resolutions across 45 states</div></div>
+    <div class="stat"><div class="stat-label">Chatbot Safety Measures</div><div class="stat-value" style="color:#3d3450">78</div><div class="stat-sub">27 states</div></div>
     <div class="stat"><div class="stat-label">States with AI Laws in Effect</div><div class="stat-value" style="color:#5c4a6e">5</div><div class="stat-sub">CA, IL, NY, TX + CT deadline Jul 2026 (CO delayed to Jun 2026)</div></div>
-    <div class="stat"><div class="stat-label">Federal AI Bills</div><div class="stat-value" style="color:#8e78a0">20+</div><div class="stat-sub">1 signed into law (TAKE IT DOWN Act)</div></div>
-    <div class="stat"><div class="stat-label">State Data Center Bills</div><div class="stat-value" style="color:#5c4a6e">200+</div><div class="stat-sub">40+ enacted (2025)</div></div>
+    <div class="stat"><div class="stat-label">Federal AI Measures</div><div class="stat-value" style="color:#8e78a0">20+</div><div class="stat-sub">2 signed into law; 1 passed Senate (DEFIANCE Act)</div></div>
+    <div class="stat"><div class="stat-label">State Data Center Measures</div><div class="stat-value" style="color:#5c4a6e">200+</div><div class="stat-sub">40+ enacted (2025)</div></div>
   </div>
 
   <!-- Tabs -->
   <div class="tabs">
-    <div class="tab active" onclick="switchTab('overview')">Bill Categories</div>
+    <div class="tab active" onclick="switchTab('overview')">Legislation by Topic</div>
     <div class="tab" onclick="switchTab('timeline')">Regulatory Timeline</div>
     <div class="tab" onclick="switchTab('pipeline')">Exec. Order &rarr; Bill Pipeline</div>
     <div class="tab" onclick="switchTab('datacenter')">Data Centers</div>
@@ -177,11 +146,11 @@
   <!-- TAB 1: Bill Categories -->
   <div id="overview" class="section active">
     <div class="card">
-      <h2>State AI Bills by Category</h2>
-      <div class="subtitle">This summary shows the most common topics addressed in 1,561 AI-related bills introduced in 45 states. Click any category bar to see which states are active and notable laws in that area. Click any state abbreviation to see all the bill categories that state is involved in. To look up the actual text of a specific bill, visit <a href="https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation" target="_blank" style="color:#5c4a6e;font-weight:500">NCSL</a>, <a href="https://www.multistate.ai/artificial-intelligence-ai-legislation" target="_blank" style="color:#5c4a6e;font-weight:500">MultiState.ai</a>, or <a href="https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker" target="_blank" style="color:#5c4a6e;font-weight:500">IAPP</a>. Estimated category counts are from these three databases. Only the 78 confirmed chatbot-safety bills and the overall total of 1,561 bills are exact numbers. Many bills fall under more than one topic.</div>
+      <h2>State AI Legislation by Topic</h2>
+      <div class="subtitle">This summary shows the most common topics addressed across 1,561 AI-related measures (bills, enacted laws, and resolutions) introduced in 45 states. Click any topic bar to see which states are active and notable laws in that area. Click any state abbreviation to see all the topics that state is involved in and to link out to external trackers for the full list of legislation. Estimated category counts are from <a href="https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation" target="_blank" style="color:#5c4a6e;font-weight:500">NCSL</a>, <a href="https://www.multistate.ai/artificial-intelligence-ai-legislation" target="_blank" style="color:#5c4a6e;font-weight:500">MultiState.ai</a>, and <a href="https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker" target="_blank" style="color:#5c4a6e;font-weight:500">IAPP</a>. Only the 78 confirmed chatbot-safety measures and the overall total of 1,561 are exact numbers. In reality, many measures fall under more than one topic, but the category counts shown here do not double-count &mdash; each measure is assigned to a single primary category so the bars sum to the 1,561 total. For the most precise per-bill categorization, consult the source trackers directly.</div>
       <div id="bill-bars"></div>
       <div class="legend">
-        <span><span class="legend-dot" style="background:#5c4a6e"></span> Number of bills</span>
+        <span><span class="legend-dot" style="background:#5c4a6e"></span> Number of measures</span>
         <span><span class="legend-dot" style="background:#e2dce8"></span> Number of states</span>
         <span style="color:#8e78a0;font-style:italic;font-size:11px">Click any bar to see active states &amp; notable laws</span>
       </div>
@@ -225,6 +194,7 @@
 
   <!-- TAB 3: Pipeline -->
   <div id="pipeline" class="section">
+    <!-- Pipeline flow -->
     <div class="card">
       <h2>Executive Order &rarr; Agency Actions &rarr; Legislation Pipeline</h2>
       <div class="subtitle">How the Executive Order, the Department of Commerce review, the Department of Justice task force, and Senator Blackburn's bill connect</div>
@@ -259,7 +229,7 @@
             <span class="agency-status" style="background:#5c4a6e;color:#ffffff">Due / Reported</span>
             <div class="agency-title">Department of Commerce Review (due Mar 11)</div>
             <div class="agency-desc">Reported to have flagged California, Colorado, and Texas AI laws as overly burdensome, focusing on transparency requirements and laws governing what AI systems can or can't produce. A full public release has not been confirmed.</div>
-            <div class="agency-role" style="color:#5c4a6e">&rarr; Creates the target list for Department of Justice lawsuits and conditional broadband funding</div>
+            <div class="agency-role" style="color:#5c4a6e">&rarr; Creates the target list for Department of Justice lawsuits and broadband funding pressure</div>
           </div>
           <div class="agency-card">
             <span class="agency-status" style="background:#e2dce8;color:#3d3450">Operational</span>
@@ -290,8 +260,8 @@
           <span class="badge" style="background:#e2dce8;color:#5c4a6e">Expected soon</span>
         </div>
         <div class="stage-body" style="border-color:#8e78a0">
-          <p>Led by David Sacks (White House Special Advisor for AI &amp; Crypto) and the Science &amp; Tech Advisor. Mr. Sacks was also named co-chair of the President's Council of Advisors on Science and Technology (PCAST). Expected to shape Senator Blackburn's bill.</p>
-          <div class="clock-note">&#128339; Pending release &mdash; expected to merge with or inform Senator Blackburn's draft</div>
+          <p>Originally led by David Sacks (White House Special Advisor for AI &amp; Crypto). Mr. Sacks stepped down on March 26, 2026 after reaching the 130-day limit for special government employees. He now co-chairs the President's Council of Advisors on Science and Technology (PCAST), an advisory role with no operational authority over this pipeline.</p>
+          <div class="clock-note">&#128339; With Sacks out of the czar role, it's unclear who drives this forward day-to-day</div>
         </div>
       </div>
 
@@ -303,7 +273,7 @@
           <span class="badge" style="background:#5c4a6e;color:#ffffff">Discussion draft</span>
         </div>
         <div class="stage-body" style="border-color:#5c4a6e;border-left:none;padding-bottom:0">
-          <p>Designed to turn the entire Executive Order framework into permanent law. Without this bill, everything above could be reversed by a future president.</p>
+          <p>Designed to turn the entire Executive Order framework into permanent law. Without this bill, everything above could be reversed by a future president. <strong>Note:</strong> This is still a discussion draft &mdash; no co-sponsors, no committee hearing scheduled, and the departure of the White House AI czar adds further uncertainty.</p>
         </div>
       </div>
     </div>
@@ -331,7 +301,7 @@
     <!-- Bottom line -->
     <div class="bottom-box">
       <h3>Bottom Line</h3>
-      <p>The agency actions (the Department of Commerce review, the Department of Justice task force, and conditional broadband funding) are <strong>already underway</strong> and don't depend on the bill passing. The bill would make them permanent and give them legal teeth. If it stalls The agency actions (Commerce Dept. review, Justice Dept. task force, broadband funding pressure) are <strong>already happening</strong> and don't depend on the bill passing. The bill would make them permanent and give them real legal teeth. If it stalls &mdash; which most experts expect &mdash; the Justice Department lawsuits become the main federal tool for pushing back on state laws.mdash; which many observers expect The agency actions (Commerce Dept. review, Justice Dept. task force, broadband funding pressure) are <strong>already happening</strong> and don't depend on the bill passing. The bill would make them permanent and give them real legal teeth. If it stalls &mdash; which most experts expect &mdash; the Justice Department lawsuits become the main federal tool for pushing back on state laws.mdash; the Department of Justice lawsuits could become the primary federal tool for challenging state laws.</p>
+      <p>The agency actions (the Department of Commerce review, the Department of Justice task force, and conditional broadband funding) are <strong>already underway</strong> and don't depend on the bill passing. The bill would make them permanent and give them legal teeth. If it stalls &mdash; which many observers expect &mdash; the Department of Justice lawsuits could become the primary federal tool for challenging state laws.</p>
       <div class="bottom-legend">
         <span><span class="bottom-legend-dot" style="background:#8e78a0"></span> Active now</span>
         <span><span class="bottom-legend-dot" style="background:#e2dce8"></span> Pending</span>
@@ -344,7 +314,7 @@
   <div id="datacenter" class="section">
     <div class="card">
       <h2>Data Center Policy: Federal vs. State</h2>
-      <div class="subtitle">The federal government is looking to accelerate buildout while states are focused on guardrails. Notably, the preemption Executive Order explicitly carves out data center infrastructure The federal government wants to accelerate buildout. States want guardrails. The preemption Executive Order explicitly carves out data center infrastructure &mdash; states keep authority here.mdash; meaning states retain authority here.</div>
+      <div class="subtitle">The federal government is looking to accelerate buildout while states are focused on guardrails. Notably, the preemption Executive Order explicitly carves out data center infrastructure &mdash; meaning states retain authority here.</div>
 
       <div class="dc-grid">
         <div class="dc-box" style="border-color:#3d3450;background:#ece8f0">
@@ -355,6 +325,7 @@
             <li><span style="color:#5c4a6e">&#10003;</span> $500M+ investment / 100+ megawatt thresholds</li>
             <li><span style="color:#5c4a6e">&#10003;</span> Voluntary Ratepayer Pledge (Mar 2026)</li>
             <li><span style="color:#8e78a0">&#9679;</span> Senator Cotton's DATA Act: let data centers bypass federal power grid rules</li>
+            <li><span style="color:#8e78a0">&#9679;</span> Protect American AI Act (H.R.8037): speed up data center permits</li>
           </ul>
         </div>
         <div class="dc-box" style="border-color:#5c4a6e;background:#ebe5f0">
@@ -373,6 +344,10 @@
         <div class="callout-title">Key difference from AI software regulation</div>
         <div class="callout-text">The December 2025 preemption Executive Order explicitly <strong>excludes</strong> data center infrastructure &mdash; states retain full authority here. The federal-state dynamic is inverted: feds accelerate, states add guardrails.</div>
       </div>
+      <div class="callout" style="border-color:#8e78a0">
+        <div class="callout-title">Counterpoint: Sanders &amp; Ocasio-Cortez Data Center Moratorium Act (Mar 25, 2026)</div>
+        <div class="callout-text">Sen. Sanders (I-VT) and Rep. Ocasio-Cortez (D-NY) introduced a bill to freeze all new data center construction until Congress passes federal AI safeguards covering worker protections, consumer rights, environmental impact, and civil liberties. The bill is unlikely to advance in the current Congress but represents the progressive counter-position to the administration's accelerate-first stance. <a href="https://www.sanders.senate.gov/press-releases/news-sanders-ocasio-cortez-announce-ai-data-center-moratorium-act/" target="_blank" style="color:#5c4a6e;font-weight:500">Read the bill &rarr;</a></div>
+      </div>
     </div>
 
     <!-- Ratepayer Protection Pledge -->
@@ -381,6 +356,7 @@
       <div class="subtitle">The White House brokered a voluntary deal with frontier tech companies to address rising electricity costs ahead of the midterms</div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <!-- Who signed -->
         <div style="background:#ebe5f0;border:1px solid #8e78a0;border-radius:8px;padding:16px">
           <h3 style="color:#5c4a6e;margin-bottom:10px">Who signed</h3>
           <div style="display:flex;flex-wrap:wrap;gap:6px">
@@ -393,6 +369,7 @@
             <span style="font-size:12px;background:#5c4a6e;color:#ffffff;padding:4px 10px;border-radius:99px;font-weight:500">xAI</span>
           </div>
         </div>
+        <!-- Why now -->
         <div style="background:#e2dce8;border:1px solid #8e78a0;border-radius:8px;padding:16px">
           <h3 style="color:#3d3450;margin-bottom:10px">Why now</h3>
           <ul style="list-style:none;font-size:13px;color:#3d3450">
@@ -403,6 +380,7 @@
         </div>
       </div>
 
+      <!-- What they committed to -->
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8;margin-bottom:16px">
         <table>
           <thead><tr><th>Commitment</th><th style="text-align:center;width:120px">Enforceable?</th></tr></thead>
@@ -462,6 +440,7 @@
           <thead><tr><th>Document</th><th>Type</th><th style="text-align:center;width:100px">Link</th></tr></thead>
           <tbody>
             <tr><td style="font-weight:500;color:#3d3450">TAKE IT DOWN Act (S. 146)</td><td>Signed into law, May 2025</td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/146" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">GUARD Act (S.3062, via FY2026 NDAA)</td><td>Signed into law, Dec 2025</td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3062" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">AI Preemption Executive Order</td><td>Executive Order, Dec 2025</td><td style="text-align:center"><a href="https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/" target="_blank" style="color:#5c4a6e;font-weight:500">WhiteHouse.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">DEFIANCE Act (S. 1837)</td><td>Passed Senate, Jan 2026</td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1837" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">TRUMP AMERICA AI Act (Senator Blackburn's Draft)</td><td>Discussion draft, Mar 2026</td><td style="text-align:center"><a href="https://www.blackburn.senate.gov/2026/3/technology/blackburn-releases-discussion-draft-of-national-policy-framework-for-artificial-intelligence/3b3b6458-b6c7-478b-9859-374949586765" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
@@ -474,24 +453,133 @@
 
     <div class="card">
       <h2>Federal AI Bill Tracker (119th Congress)</h2>
-      <div class="subtitle">Key AI-related bills beyond the Executive Order pipeline. Over 20 AI bills introduced in the 119th Congress; none passed into law except TAKE IT DOWN Act. Source: Congress.gov, Brennan Center.</div>
+      <div class="subtitle">Over 20 AI-related bills have been introduced in the 119th Congress. Two have been signed into law (TAKE IT DOWN Act and GUARD Act via NDAA). The DEFIANCE Act passed the Senate unanimously but awaits a House vote. Sources: Congress.gov, Brennan Center, Transparency Coalition.</div>
+
+      <!-- Signed into law -->
+      <div style="margin-top:12px;margin-bottom:6px;font-size:11px;font-weight:700;color:#3d3450;text-transform:uppercase;letter-spacing:0.5px">&#9989; Signed Into Law</div>
       <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
         <table>
           <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
           <tbody>
-            <tr><td style="font-weight:500;color:#3d3450">Kids Online Safety Act (S.1748)</td><td>Platform duty of care for minors; safeguards & parental tools</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1748" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">KIDS Act (H.R.7757)</td><td>House companion for kids online safety; cleared committee 28-24</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/7757" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">CREATE AI Act (H.R.2385)</td><td>Creates a national shared resource for AI research; bipartisan</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/2385" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">AI PLAN Act (H.R.2152)</td><td>AI risk in financial crimes, fraud, misinformation</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/2152" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">GAIN AI Act (H.R.5885 / S.3150)</td><td>AI chip export controls; priority for U.S. buyers</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3150" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">READ AI Models Act (H.R.6461)</td><td>Requires the National Institute of Standards and Technology to set best practices for documenting AI models</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/6461" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">Protect American AI Act (H.R.8037)</td><td>Speeds up data center building permits and AI infrastructure</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/8037" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">TAKE IT DOWN Act (S.146)</td><td>Criminalizes non-consensual intimate deepfakes; platform removal mandates</td><td style="text-align:center"><span class="badge" style="background:#3d3450;color:#ffffff">Signed May 2025</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/146" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">GUARD Act (S.3062, via FY2026 NDAA)</td><td>Establishes National Security &amp; Defense AI Institute at a senior military college</td><td style="text-align:center"><span class="badge" style="background:#3d3450;color:#ffffff">Signed Dec 2025</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3062" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Passed one chamber -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#9193; Passed One Chamber</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">DEFIANCE Act (S.1837)</td><td>Civil liability for non-consensual sexually explicit deepfakes; up to $150K damages</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Passed Senate</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1837" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Child safety & deepfakes -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#128119; Child Safety &amp; Deepfakes</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">Kids Online Safety Act (S.1748)</td><td>Platform duty of care for minors; safeguards &amp; parental tools</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1748" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">KIDS Act (H.R.7757)</td><td>House companion for kids online safety; cleared committee 28&ndash;24</td><td style="text-align:center"><span class="badge" style="background:#5c4a6e;color:#ffffff">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/7757" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">CHAT Act (S.2714)</td><td>AI chatbot safety standards for minors</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/2714" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">NO FAKES Act (H.R.2794 / Senate companion)</td><td>Protects voice &amp; likeness from unauthorized AI replicas; bipartisan (Blackburn, Coons, Klobuchar, Tillis)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/2794" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Elections & political deepfakes -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#127891; Elections &amp; Political Deepfakes</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">Protect Elections from Deceptive AI Act (S.1213)</td><td>Bans deceptive AI-generated media targeting federal candidates; bipartisan (Klobuchar, Hawley, Collins, Coons)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1213" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Copyright & training data -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#169; Copyright &amp; Training Data</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">CLEAR Act (S.3813)</td><td>Requires AI companies to disclose all copyrighted works in training data to Copyright Office; bipartisan (Schiff, Curtis)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3813" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">TRAIN Act (H.R.7209)</td><td>Gives copyright holders subpoena power to check if their work was used in AI training; bipartisan (Dean, Moran)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/7209" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Federal preemption -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#9878; Federal Preemption of State Laws</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">TRUMP AMERICA AI Act (Sen. Blackburn)</td><td>Sweeping 291-page framework: codifies EO preemption, includes KOSA, NO FAKES, copyright, chatbot duty of care, Section 230 repeal</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Discussion draft</span></td><td style="text-align:center"><a href="https://www.blackburn.senate.gov/2026/3/technology/blackburn-releases-discussion-draft-of-national-policy-framework-for-artificial-intelligence/3b3b6458-b6c7-478b-9859-374949586765" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">American AI Leadership &amp; Uniformity Act (H.R.5388)</td><td>5-year moratorium on new state AI mandates; codifies EO preemption from the House side (Rep. Baumgartner)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/5388" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- National security & defense -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#128737; National Security &amp; Defense</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">AI Guardrails Act (S.4113)</td><td>Limits DOD use of AI for lethal force, domestic surveillance, and nuclear weapons; waiver mechanism for nat'l security (Sen. Slotkin)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/4113" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">GAIN AI Act (H.R.5885 / S.3150)</td><td>AI chip export controls; priority for U.S. buyers</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3150" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Foreign Adversary AI Risk Assessment Act (H.R.7058)</td><td>Requires State Dept. to assess AI risks from foreign adversaries</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/7058" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Workforce & economy -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#128188; Workforce &amp; Economy</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">AI Workforce PREPARE Act (S.3339)</td><td>Updates WARN Act for AI layoffs; creates DOL workforce research hub; bipartisan (Banks, Hassan, Hickenlooper)</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/3339" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">AI PLAN Act (H.R.2152)</td><td>AI risk in financial crimes, fraud, misinformation</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/2152" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Standards, research & transparency -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#128300; Standards, Research &amp; Transparency</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">CREATE AI Act (H.R.2385)</td><td>National shared resource for AI research (NAIRR); bipartisan</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Committee</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/2385" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">AI for America Act (H.R.6304)</td><td>Codifies national AI strategy; requires OSTP action plan by Jul 2027</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/6304" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">READ AI Models Act (H.R.6461)</td><td>NIST best practices for documenting AI models</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/6461" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">AI Risk Evaluation Act (S.2938)</td><td>AI system risk assessment requirements</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/senate-bill/2938" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
           </tbody>
         </table>
       </div>
-      <div style="margin-top:12px;font-size:12px;color:#8e78a0">Note: Senator Blackburn's TRUMP AMERICA AI Act (discussion draft) is a sweeping 291-page bill that goes well beyond the items above. It also includes the Kids Online Safety Act, the NO FAKES Act, copyright protections, a chatbot duty of care, AI-related job-effects reporting, a repeal of Section 230, a national AI research resource, research and standards provisions, and data center ratepayer protections. See the Pipeline tab for how it connects to the Executive Order. For the full list of 20+ AI bills, see the <a href="https://www.brennancenter.org/our-work/research-reports/artificial-intelligence-legislation-tracker" target="_blank" style="color:#5c4a6e">Brennan Center AI Legislation Tracker</a>.</div>
+
+      <!-- Data centers & infrastructure -->
+      <div style="margin-top:16px;margin-bottom:6px;font-size:11px;font-weight:700;color:#5c4a6e;text-transform:uppercase;letter-spacing:0.5px">&#9889; Data Centers &amp; Infrastructure</div>
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e2dce8">
+        <table>
+          <thead><tr><th>Bill</th><th>Focus</th><th style="text-align:center;width:130px">Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:500;color:#3d3450">AI Data Center Moratorium Act (Sanders / Ocasio-Cortez)</td><td>Freezes new data center construction until federal AI safeguards are enacted; cites energy costs, surveillance, deepfake harms</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.sanders.senate.gov/press-releases/news-sanders-ocasio-cortez-announce-ai-data-center-moratorium-act/" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Protect American AI Act (H.R.8037)</td><td>Speeds up data center building permits and AI infrastructure</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.congress.gov/bill/119th-congress/house-bill/8037" target="_blank" style="color:#5c4a6e;font-weight:500">Congress.gov</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Senator Cotton's DATA Act</td><td>Lets data centers bypass federal power grid rules</td><td style="text-align:center"><span class="badge" style="background:#e2dce8;color:#5c4a6e">Introduced</span></td><td style="text-align:center"><a href="https://www.cotton.senate.gov/news/press-releases/cotton-introduces-bill-to-lower-energy-costs-for-arkansans" target="_blank" style="color:#5c4a6e;font-weight:500">Senate.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:12px;font-size:12px;color:#8e78a0">This is not an exhaustive list. For the full inventory of federal AI bills, see the <a href="https://www.brennancenter.org/our-work/research-reports/artificial-intelligence-legislation-tracker" target="_blank" style="color:#5c4a6e">Brennan Center AI Legislation Tracker</a>. Senator Blackburn's TRUMP AMERICA AI Act (discussion draft) is a sweeping 291-page bill that bundles many of the items above &mdash; including KOSA, the NO FAKES Act, copyright protections, a chatbot duty of care, and data center ratepayer protections &mdash; but has no co-sponsors and no committee hearing scheduled.</div>
     </div>
 
     <div class="card">
@@ -511,7 +599,7 @@
           <thead><tr><th>Law</th><th>Status</th><th style="text-align:center;width:100px">Link</th></tr></thead>
           <tbody>
             <tr><td style="font-weight:500;color:#3d3450">Texas TRAIGA (HB 149)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00149S.htm" target="_blank" style="color:#5c4a6e;font-weight:500">Texas Capitol</a></td></tr>
-            <tr><td style="font-weight:500;color:#3d3450">Colorado SB24-205</td><td>Delayed to Jun 30, 2026 (by SB25B-004)</td><td style="text-align:center"><a href="https://leg.colorado.gov/bills/sb24-205" target="_blank" style="color:#5c4a6e;font-weight:500">CO Legislature</a></td></tr>
+            <tr><td style="font-weight:500;color:#3d3450">Colorado SB24-205</td><td>Signed May 17, 2024; delayed to Jun 30, 2026 (by SB25B-004)</td><td style="text-align:center"><a href="https://leg.colorado.gov/bills/sb24-205" target="_blank" style="color:#5c4a6e;font-weight:500">CO Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California AI Transparency Act (SB 942, amended by AB 853)</td><td>Effective Aug 2, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB942" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California Companion AI Chatbot Safety Act (SB 243)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
             <tr><td style="font-weight:500;color:#3d3450">California Frontier AI Transparency Act (SB 53)</td><td>Effective Jan 1, 2026</td><td style="text-align:center"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53" target="_blank" style="color:#5c4a6e;font-weight:500">CA Legislature</a></td></tr>
@@ -593,7 +681,7 @@
   </div>
 
   <div class="footer">
-    This dashboard is informational only and does not constitute legal, regulatory, or policy advice. Data is sourced from public databases; per-category bill breakdowns are estimates and may not reflect current legislative status. Verify figures against original sources before making professional or organizational decisions. Direct links to official documents are available on the Sources &amp; Bills tab. Research was gathered and visualized with the assistance of AI.<br><br>Sources: White House releases, Congress.gov, state legislature websites, MultiState.ai, IAPP, Transparency Coalition, Brennan Center, Reuters, and Congressional materials.<br>&copy; 2026 Tabula Ethica AI.
+    This dashboard is informational only and does not constitute legal, regulatory, or policy advice. Data is sourced from public databases; per-category bill breakdowns are estimates and may not reflect current legislative status. Verify figures against original sources before making professional or organizational decisions. Direct links to official documents are available on the Sources &amp; Bills tab. Research was gathered and visualized with the assistance of AI.<br><br>Sources: White House releases, Congress.gov, state legislature websites, MultiState.ai, IAPP, Transparency Coalition, Brennan Center, Reuters, and Congressional materials. &copy; 2026 Tabula Ethica AI.
   </div>
 </div>
 
@@ -604,7 +692,7 @@ function switchTab(id) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.tab').forEach(t => {
-    if ((id === 'overview' && t.textContent === 'Bill Categories') ||
+    if ((id === 'overview' && t.textContent === 'Legislation by Topic') ||
         (id === 'timeline' && t.textContent === 'Regulatory Timeline') ||
         (id === 'pipeline' && t.textContent.includes('Pipeline')) ||
         (id === 'datacenter' && t.textContent === 'Data Centers') ||
@@ -615,7 +703,7 @@ function switchTab(id) {
   });
 }
 
-// Bill categories bar chart
+// Legislation by topic bar chart — using brand palette tonal variations
 // Note: These are the top tracked policy categories. The 1,561 total includes
 // govt use, procurement, workforce, education, election, study commissions, etc.
 // Many bills span multiple categories. Source: MultiState.ai, IAPP, Transparency Coalition.
@@ -623,7 +711,7 @@ const bills = [
   { name: "Govt Use / Procurement", bills: 320, states: 40, color: "#5c4a6e",
     stateList: "AL, AR, AZ, CA, CO, CT, FL, GA, HI, IA, ID, IL, IN, KS, KY, MA, MD, ME, MI, MN, MO, MS, MT, NC, NE, NH, NJ, NY, OH, OK, OR, PA, SC, SD, TN, TX, UT, VA, WA, WI",
     notable: [
-      "TX TRAIGA (eff. Jan 2026) &mdash; requires state agencies to adopt AI governance policies",
+      "TX TRAIGA (eff. Jan 1, 2026) &mdash; requires state agencies to adopt AI governance policies",
       "CA AB 302 (enacted) &mdash; state tech inventory of automated decision systems",
       "IL Executive Order (2024) &mdash; AI use guidelines for state agencies"
     ]},
@@ -745,6 +833,12 @@ bills.forEach((b, i) => {
   });
 });
 
+// State name to NCSL/MultiState lookup
+const stateSlugMap = {};
+Object.keys(stateNames).forEach(abbr => {
+  stateSlugMap[abbr] = stateNames[abbr].toLowerCase().replace(/\s+/g, '-');
+});
+
 // Show state detail panel
 function showStateDetail(abbr, evt) {
   evt.stopPropagation();
@@ -753,11 +847,22 @@ function showStateDetail(abbr, evt) {
   const info = stateIndex[abbr];
   if (!info) return;
   const full = stateNames[abbr] || abbr;
+  const slug = stateSlugMap[abbr] || abbr.toLowerCase();
   const catChips = info.categories.map(c => `<span style="display:inline-block;background:#ebe5f0;border:1px solid #e2dce8;color:#3d3450;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:500;margin:2px">${c}</span>`).join('');
   let notableHtml = '';
   if (info.notables.length > 0) {
-    notableHtml = `<div style="margin-top:10px"><span style="font-size:11px;font-weight:600;color:#5c4a6e">Notable laws:</span><ul style="margin:4px 0 0 16px;font-size:11px;line-height:1.6">${info.notables.map(n => `<li style="margin-bottom:4px"><span style="color:#8e78a0;font-weight:500">${n.cat}:</span> ${n.text}</li>`).join('')}</ul></div>`;
+    notableHtml = `<div style="margin-top:12px"><span style="font-size:12px;font-weight:600;color:#5c4a6e">Notable enacted laws &amp; key bills:</span><ul style="margin:4px 0 0 16px;font-size:11px;line-height:1.6">${info.notables.map(n => `<li style="margin-bottom:4px"><span style="color:#8e78a0;font-weight:500">${n.cat}:</span> ${n.text}</li>`).join('')}</ul></div>`;
+  } else {
+    notableHtml = `<div style="margin-top:12px;font-size:11px;color:#8e78a0;font-style:italic">No notable laws highlighted for this state yet. Use the tracker links below to see all legislation.</div>`;
   }
+  const trackerLinks = `<div style="margin-top:14px;padding-top:12px;border-top:1px solid #e2dce8">
+    <div style="font-size:12px;font-weight:600;color:#5c4a6e;margin-bottom:8px">See all ${full} AI legislation:</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <a href="https://www.multistate.ai/artificial-intelligence-ai-legislation" target="_blank" style="display:inline-block;background:#5c4a6e;color:#fff;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:600;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='#3d3450'" onmouseout="this.style.background='#5c4a6e'">MultiState.ai &rarr;</a>
+      <a href="https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation" target="_blank" style="display:inline-block;background:#5c4a6e;color:#fff;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:600;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='#3d3450'" onmouseout="this.style.background='#5c4a6e'">NCSL &rarr;</a>
+      <a href="https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker" target="_blank" style="display:inline-block;background:#5c4a6e;color:#fff;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:600;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='#3d3450'" onmouseout="this.style.background='#5c4a6e'">IAPP &rarr;</a>
+    </div>
+  </div>`;
   const modal = document.createElement('div');
   modal.id = 'state-modal';
   modal.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(61,52,80,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
@@ -767,18 +872,19 @@ function showStateDetail(abbr, evt) {
       <div><span style="font-size:20px;font-weight:700;color:#3d3450">${full}</span> <span style="font-size:14px;color:#8e78a0;font-weight:500">(${abbr})</span></div>
       <span onclick="document.getElementById('state-modal').remove()" style="cursor:pointer;font-size:20px;color:#8e78a0;font-weight:700;padding:0 4px">&times;</span>
     </div>
-    <div style="margin-bottom:8px;font-size:13px;color:#3d3450"><strong>Active in ${info.categories.length} of 15 bill categories:</strong></div>
+    <div style="margin-bottom:8px;font-size:13px;color:#3d3450"><strong>Active in ${info.categories.length} of 15 topic areas:</strong></div>
     <div style="line-height:1.8;margin-bottom:6px">${catChips}</div>
     ${notableHtml}
-    <div style="margin-top:14px;padding-top:10px;border-top:1px solid #e2dce8;font-size:11px;color:#8e78a0">Click outside this panel or the &times; to close</div>
+    ${trackerLinks}
+    <div style="margin-top:12px;font-size:10px;color:#8e78a0">Click outside this panel or the &times; to close</div>
   </div>`;
   document.body.appendChild(modal);
 }
 
-const maxBills = 320;
+const maxMeasures = 320;
 let barsHtml = '';
 bills.forEach((b, i) => {
-  const bw = (b.bills / maxBills * 100) * 0.65;
+  const bw = (b.bills / maxMeasures * 100) * 0.65;
   const sw = (b.states / 45 * 100) * 0.15;
   const stateChips = b.stateList.split(', ').map(s => `<span onclick="showStateDetail('${s}', event)" style="display:inline-block;background:#5c4a6e;color:#fff;padding:2px 7px;border-radius:99px;font-size:10px;font-weight:600;margin:2px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='#3d3450'" onmouseout="this.style.background='#5c4a6e'">${s}</span>`).join('');
   const notableHtml = b.notable.map(n => `<li style="margin-bottom:3px">${n}</li>`).join('');
@@ -790,7 +896,7 @@ bills.forEach((b, i) => {
     </div>
   </div>
   <div id="bar-detail-${i}" style="display:none;background:#ebe5f0;border:1px solid #e2dce8;border-radius:8px;padding:12px 14px;margin:-4px 0 10px 0;font-size:12px;color:#3d3450">
-    <div style="margin-bottom:8px"><strong>${b.bills} bills across ${b.states} states</strong></div>
+    <div style="margin-bottom:8px"><strong>${b.bills} measures across ${b.states} states</strong></div>
     <div style="margin-bottom:8px"><span style="font-size:11px;font-weight:600;color:#5c4a6e">Active states:</span> <span style="font-size:10px;color:#8e78a0">(click any state)</span><div style="margin-top:4px;line-height:1.8">${stateChips}</div></div>
     <div><span style="font-size:11px;font-weight:600;color:#5c4a6e">Notable laws:</span><ul style="margin:4px 0 0 16px;font-size:11px;line-height:1.5">${notableHtml}</ul></div>
   </div>`;
@@ -804,6 +910,7 @@ const tl = [
   { date: "Oct 2025", event: "California Employment AI Regulations effective (CCRC/FEHA)", type: "state", done: true },
   { date: "Nov 2025", event: "New York Algorithmic Pricing Disclosure Law effective", type: "state", done: true },
   { date: "Dec 2025", event: "New York RAISE Act signed (effective Jan 2027)", type: "state", done: true },
+  { date: "Dec 2025", event: "GUARD Act signed into law (via FY2026 NDAA)", type: "federal", done: true },
   { date: "Dec 2025", event: "Administration's AI Preemption Executive Order", type: "federal", done: true },
   { date: "Jan 2026", event: "Texas TRAIGA effective", type: "state", done: true },
   { date: "Aug 2, 2026", event: "California AI Transparency Act (SB 942) effective (delayed by AB 853)", type: "state", done: false },
@@ -812,12 +919,21 @@ const tl = [
   { date: "Jan 2026", event: "California AI Training Data Transparency (AB 2013) effective", type: "state", done: true },
   { date: "Jan 2026", event: "Illinois Employment AI Act (HB 3773) effective", type: "state", done: true },
   { date: "Jan 9, 2026", event: "Dept. of Justice AI Litigation Task Force", type: "federal", done: true },
-  { date: "Jan 2026", event: "DEFIANCE Act passes Senate", type: "federal", done: true },
+  { date: "Jan 13, 2026", event: "DEFIANCE Act passes Senate unanimously (awaits House)", type: "federal", done: true },
+  { date: "Jan 2026", event: "TRAIN Act introduced (copyright subpoena power for AI training data)", type: "federal", done: true },
+  { date: "Feb 2026", event: "CLEAR Act introduced (Schiff/Curtis — AI training data transparency)", type: "federal", done: true },
+  { date: "Feb 2026", event: "FY2026 spending package signed with AI provisions (defense, FCC robocalls)", type: "federal", done: true },
   { date: "Mar 2026", event: "Dept. of Commerce state law review due", type: "federal", done: true },
   { date: "Mar 2026", event: "Federal Trade Commission AI policy statement", type: "federal", done: true },
   { date: "Mar 2026", event: "Ratepayer Protection Pledge launched", type: "datacenter", done: true },
-  { date: "Mar 2026", event: "Senator Blackburn's draft framework", type: "federal", done: false },
+  { date: "Mar 2026", event: "Senator Blackburn's draft framework (no co-sponsors, no hearing)", type: "federal", done: false },
   { date: "Mar 2026", event: "Senator Cotton's DATA Act introduced", type: "datacenter", done: false },
+  { date: "Mar 17, 2026", event: "AI Guardrails Act introduced (Sen. Slotkin) — DOD limits on lethal AI", type: "federal", done: false },
+  { date: "Mar 25, 2026", event: "Sanders/AOC Data Center Moratorium Act introduced", type: "datacenter", done: false },
+  { date: "Mar 26, 2026", event: "David Sacks steps down as White House AI czar; moves to PCAST", type: "federal", done: true },
+  { date: "Mar 2026", event: "Washington signs AI chatbot safety (HB 2225) and AI transparency (HB 1170)", type: "state", done: true },
+  { date: "Mar 2026", event: "Oregon passes chatbot safety bill (SB 1546)", type: "state", done: true },
+  { date: "Mar 2026", event: "Utah signs 9 AI bills (deepfakes, schools, health, age verification)", type: "state", done: true },
   { date: "Jun 30, 2026", event: "Colorado SB24-205 effective (delayed by SB25B-004)", type: "state", done: false },
   { date: "Jul 2026", event: "Connecticut CTDPA AI Amendment compliance deadline", type: "state", done: false },
   { date: "Nov 2026", event: "Midterm elections (no federal deepfake law)", type: "milestone", done: false },
@@ -874,8 +990,8 @@ document.getElementById('dc-bars').innerHTML = dcBarsHtml;
 const tensions = [
   { num: 1, title: "Federal vs. State: Who Gets to Regulate AI?", desc: "The Executive Order signals an intent to override state AI laws, but on its own it may not have the legal authority to do so. States appear to be moving ahead regardless, which could lead to lawsuits.", risk: "high" },
   { num: 2, title: "No Federal Deepfake Law Before Midterms", desc: "As of now, there's no federal law banning political deepfakes heading into the November 2026 midterms. That leaves state laws as the primary safeguard.", risk: "high" },
-  { num: 3, title: "A Patchwork of State Rules", desc: "Every state has different timelines, definitions, and penalties. Companies have to comply with all of them at once — and prove they're doing it.", risk: "high" },
-  { num: 4, title: "Copyright and AI Training Data", desc: "Senator Blackburn's bill could be the first time Congress takes a position on whether AI companies can train on copyrighted content without permission.", risk: "medium" },
+  { num: 3, title: "A Patchwork of State Rules", desc: "Every state has different timelines, definitions, and penalties. Companies have to comply with all of them at once &mdash; and prove they're doing it.", risk: "high" },
+  { num: 4, title: "Copyright and AI Training Data", desc: "Senator Blackburn's discussion draft could be the first time Congress takes a position on whether AI companies can train on copyrighted content without permission &mdash; but the bill has no co-sponsors and no hearing date.", risk: "medium" },
   { num: 5, title: "Chatbot Safety Is Gaining Steam", desc: "78 bills across 27 states so far. Protecting kids from harmful AI chatbots appears to be one of the few issues drawing bipartisan attention.", risk: "medium" },
   { num: 6, title: "Data Centers: Energy, Water, and Land Use", desc: "The federal government is working to fast-track construction while some states are raising concerns about power grid strain, water consumption, and local impacts.", risk: "high" },
   { num: 7, title: "The EU AI Act Applies to U.S. Companies Too", desc: "This dashboard focuses on U.S. regulation, but any American company offering AI products or services in the EU must also comply with the EU AI Act. Key obligations are already enforceable, with penalties of up to \u20AC35 million or 7% of global revenue. High-risk AI system requirements take effect in August 2026.", risk: "medium" },
